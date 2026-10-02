@@ -360,7 +360,7 @@ details { margin-top:12px; }
       </div>
       <div class="card">
         <span class="pill">VIDEO 02</span>
-        <h3>A Little More of Us 🎀</h3>
+        <h3>Cutiepie 🎀</h3>
         <video class="media" controls preload="metadata" playsinline>
           <source src="VIDEO2.mp4" type="video/mp4">
           Your browser does not support video.
@@ -368,7 +368,7 @@ details { margin-top:12px; }
       </div>
       <div class="card">
         <span class="pill">VIDEO 03</span>
-        <h3>One to Remember 💗</h3>
+        <h3>Hihihi 💗</h3>
         <video class="media" controls preload="metadata" playsinline>
           <source src="VIDEO3.mp4" type="video/mp4">
           Your browser does not support video.
