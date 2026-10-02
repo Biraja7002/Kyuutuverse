@@ -1,1175 +1,747 @@
-# Kyuutuverse
-💗 A little corner of the internet made with love, especially for my Kyuutu, Anuska. 🎀✨ A place filled with our memories, cute surprises, and all the little things that remind me of you. Happy Birthday, my girl! 🎂💕 You deserve all the happiness in the world. 🌷🫶🏻
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#fff0f7">
-<title>For Kyuutu ♡ — The Birthday Universe</title>
+<meta name="theme-color" content="#fff0f6">
+<title>Kyuutuverse ♡ | Anuska's Birthday</title>
 
 <style>
 :root {
-  --bg: #fff4fa;
-  --paper: #fffafd;
-  --ink: #512b48;
-  --muted: #956b87;
-  --pink: #f08ab9;
-  --hot: #d94e93;
-  --lav: #c8b7ff;
-  --line: #f2cde0;
-  --shadow: 0 18px 50px #9e47741b;
+  --pink:#ff6fae;
+  --pink2:#ffc4dc;
+  --purple:#a78bfa;
+  --cream:#fff8fb;
+  --ink:#513047;
+  --muted:#936d83;
+  --glass:rgba(255,255,255,.78);
 }
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:82px; }
 body {
-  margin: 0;
+  margin:0;
+  font-family:"Trebuchet MS",Arial,sans-serif;
+  color:var(--ink);
   background:
-    radial-gradient(circle at 10% 5%, #ffe1ef 0, transparent 28rem),
-    radial-gradient(circle at 90% 25%, #e9e3ff 0, transparent 30rem),
-    var(--bg);
-  color: var(--ink);
-  font-family: "Trebuchet MS", system-ui, sans-serif;
-  line-height: 1.65;
+    radial-gradient(circle at 10% 5%,#ffe0ee 0,transparent 28%),
+    radial-gradient(circle at 95% 25%,#e9ddff 0,transparent 28%),
+    linear-gradient(145deg,#fff8fb,#fff0f6 45%,#f6efff);
+  overflow-x:hidden;
 }
-
-body.night {
-  --bg: #191426;
-  --paper: #282038;
-  --ink: #fff0fa;
-  --muted: #d5b8ce;
-  --line: #57405c;
-  --shadow: 0 18px 50px #0004;
-  background:
-    radial-gradient(circle at 10% 5%, #56304e 0, transparent 28rem),
-    radial-gradient(circle at 90% 25%, #342e61 0, transparent 30rem),
-    var(--bg);
-}
-
-a { color: inherit; }
-button, input, textarea { font: inherit; }
-button { border: 0; cursor: pointer; }
-
-.wrap {
-  width: min(1100px, 92%);
-  margin: auto;
-}
-
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: var(--paper);
-  border-bottom: 1px solid var(--line);
-}
-
-.nav {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
-}
-
-.brand {
-  font-weight: 900;
-  letter-spacing: .04em;
-}
-
-.navlinks {
-  display: flex;
-  gap: 7px;
-  flex-wrap: wrap;
-}
-
-.navlinks a, .pill {
-  padding: 7px 12px;
-  border: 1px solid var(--line);
-  border-radius: 99px;
-  text-decoration: none;
-  font-size: .82rem;
-  background: var(--paper);
-}
-
-.btn {
-  background: linear-gradient(135deg, var(--pink), var(--hot));
-  color: white;
-  border-radius: 99px;
-  padding: 11px 18px;
-  box-shadow: 0 8px 20px #d94e9330;
-  font-weight: 800;
-}
-
-.btn.secondary {
-  background: var(--paper);
-  color: var(--ink);
-  border: 1px solid var(--line);
-  box-shadow: none;
-}
-
-.hero {
-  min-height: 86vh;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 70px 0 45px;
-  position: relative;
-  overflow: hidden;
-}
-
+button,input,textarea { font:inherit; }
+button { cursor:pointer; }
+a { color:inherit; }
+img,video { max-width:100%; }
+section { padding:66px 18px; }
+.wrap { width:min(100%,920px); margin:auto; }
+.center { text-align:center; }
 .eyebrow {
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--hot);
-  font-weight: 900;
-  font-size: .76rem;
+  text-transform:uppercase; letter-spacing:3px;
+  color:#d45b98; font-size:.76rem; font-weight:bold;
 }
-
-.hero h1 {
-  font-size: clamp(3rem, 9vw, 6.8rem);
-  line-height: .98;
-  letter-spacing: -.06em;
-  margin: 18px auto;
-  max-width: 850px;
-}
-
-.gradient {
-  background: linear-gradient(110deg, #d84f98, #9c7de8, #ee83ac);
-  background-clip: text;
-  color: transparent;
-}
-
-.hero p {
-  max-width: 630px;
-  margin: 20px auto;
-  color: var(--muted);
-  font-size: 1.1rem;
-}
-
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(1px);
-  opacity: .5;
-  animation: float 7s ease-in-out infinite;
-  pointer-events: none;
-}
-
-.orb.one {
-  width: 90px;
-  height: 90px;
-  background: #ffbad9;
-  top: 18%;
-  left: 8%;
-}
-
-.orb.two {
-  width: 55px;
-  height: 55px;
-  background: #c4b2ff;
-  right: 10%;
-  top: 27%;
-  animation-delay: -3s;
-}
-
-.orb.three {
-  width: 34px;
-  height: 34px;
-  background: #ffdf9c;
-  bottom: 17%;
-  left: 16%;
-  animation-delay: -1s;
-}
-
-@keyframes float {
-  50% { transform: translateY(-22px) rotate(12deg); }
-}
-
-.hero-actions {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 25px;
-}
-
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin: 30px 0;
-}
-
-.timebox {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 12px 18px;
-  min-width: 76px;
-  box-shadow: var(--shadow);
-}
-
-.timebox b {
-  display: block;
-  font-size: 1.6rem;
-}
-
-.timebox small { color: var(--muted); }
-
-section {
-  padding: 70px 0;
-  scroll-margin-top: 75px;
-}
-
-.sectionhead {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 30px;
-}
-
-.sectionhead h2 {
-  font-size: clamp(2rem, 5vw, 3.4rem);
-  letter-spacing: -.04em;
-  line-height: 1.1;
-  margin: 8px 0;
-}
-
-.sectionhead p { color: var(--muted); }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
+h1,h2,h3 { line-height:1.2; }
+h2 { font-size:clamp(1.8rem,6vw,2.8rem); margin:10px 0 14px; }
+p { line-height:1.8; }
+.muted { color:var(--muted); }
+.small { font-size:.87rem; }
 .card {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  padding: 22px;
-  box-shadow: var(--shadow);
-  min-width: 0;
+  background:var(--glass);
+  border:1px solid rgba(255,255,255,.9);
+  border-radius:24px;
+  padding:22px;
+  box-shadow:0 12px 38px rgba(184,92,139,.10);
+  backdrop-filter:blur(12px);
 }
-
-.card h3 { margin: 8px 0; }
-.card p { color: var(--muted); margin: 7px 0; }
-.emoji { font-size: 2rem; }
-
-.tag {
-  display: inline-block;
-  border-radius: 99px;
-  background: #ffe3f0;
-  color: #a73570;
-  padding: 4px 10px;
-  font-size: .76rem;
-  font-weight: 800;
+.btn {
+  border:0; border-radius:999px; padding:13px 21px;
+  background:linear-gradient(120deg,#ff75b5,#c5a0ff);
+  color:white; font-weight:bold;
+  box-shadow:0 7px 20px #ec8cbb40;
+  transition:.2s;
 }
-
-.night .tag {
-  background: #54314c;
-  color: #ffd5eb;
+.btn:hover { transform:translateY(-2px); }
+.btn.secondary {
+  color:#a4497a; background:white;
+  border:1px solid #f4c5dc; box-shadow:none;
 }
-
+.btn:disabled { opacity:.55; cursor:not-allowed; }
+.pill {
+  display:inline-block; padding:7px 12px; border-radius:30px;
+  background:#ffe2ef; color:#a54c7b; font-size:.8rem;
+}
+.grid { display:grid; gap:17px; }
+.two { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.three { grid-template-columns:repeat(3,minmax(0,1fr)); }
+nav {
+  position:sticky; top:0; z-index:10;
+  display:flex; gap:9px; align-items:center;
+  padding:11px 13px; overflow-x:auto; white-space:nowrap;
+  background:#fff8f2eF;
+  border-bottom:1px solid #f7dce9;
+  backdrop-filter:blur(16px);
+}
+nav .brand { font-weight:bold; color:#c64d8b; margin-right:8px; }
+nav a {
+  text-decoration:none; font-size:.8rem; padding:8px 10px;
+  border-radius:30px; background:#fff; border:1px solid #f6dce8;
+}
+nav a:hover { background:#ffe2ef; }
+.hero {
+  min-height:88vh; display:flex; align-items:center;
+  justify-content:center; padding:55px 18px 70px;
+  position:relative; overflow:hidden;
+}
+.hero-inner { width:min(100%,800px); text-align:center; position:relative; z-index:1; }
+.hero h1 {
+  font-size:clamp(3rem,13vw,6.4rem);
+  letter-spacing:-3px; margin:18px 0 10px;
+  background:linear-gradient(100deg,#f05b9f,#ad80f2,#f05b9f);
+  color:transparent; background-clip:text;
+}
+.hero p { max-width:620px; margin:12px auto 24px; }
+.hero-heart { font-size:3rem; animation:heartbeat 1.5s infinite; display:inline-block; }
+@keyframes heartbeat { 50% { transform:scale(1.15); } }
+.float {
+  position:absolute; pointer-events:none; opacity:.6;
+  animation:floatUp 8s linear infinite;
+}
+@keyframes floatUp {
+  from { transform:translateY(15vh) rotate(0deg); opacity:0; }
+  15% { opacity:.65; }
+  to { transform:translateY(-110vh) rotate(260deg); opacity:0; }
+}
+.countdown {
+  display:flex; justify-content:center; gap:10px;
+  flex-wrap:wrap; margin:24px 0;
+}
+.timebox {
+  min-width:72px; padding:15px 11px;
+  background:#ffffffb8; border:1px solid #f5c9df;
+  border-radius:18px; box-shadow:0 7px 20px #e9a5c522;
+}
+.timebox strong { display:block; font-size:1.65rem; color:#c94d91; }
+.timebox span { font-size:.72rem; color:var(--muted); }
+.section-head { text-align:center; margin:0 auto 28px; max-width:650px; }
+.section-head p { color:var(--muted); }
+.photo {
+  width:100%; height:290px; object-fit:cover;
+  border-radius:18px; background:#f8dfea;
+  display:block;
+}
+.photo-card { padding:12px; transform:rotate(-1deg); }
+.photo-card:nth-child(even) { transform:rotate(1deg); }
+.photo-card p { margin:10px 4px 2px; text-align:center; }
+.memory-number { color:#cf5997; font-size:.78rem; }
+.media {
+  display:block; width:100%; border-radius:17px;
+  background:#f4d8e7; max-height:460px;
+}
+audio { width:100%; margin:12px 0; }
+.song-cover {
+  font-size:4rem; width:115px; height:115px;
+  margin:0 auto 16px; border-radius:50%;
+  display:grid; place-items:center;
+  background:linear-gradient(140deg,#ffd2e7,#d9c8ff);
+  box-shadow:0 0 0 10px #fff7fb,0 0 0 12px #f6d6e7;
+}
+.equalizer { display:flex; justify-content:center; gap:5px; height:30px; align-items:center; }
+.equalizer span { width:5px; height:9px; border-radius:8px; background:#dc75ac; }
+.equalizer.playing span { animation:bars .65s ease-in-out infinite alternate; }
+.equalizer span:nth-child(2) { animation-delay:.1s; }
+.equalizer span:nth-child(3) { animation-delay:.2s; }
+.equalizer span:nth-child(4) { animation-delay:.3s; }
+.equalizer span:nth-child(5) { animation-delay:.4s; }
+@keyframes bars { to { height:28px; } }
 .portal {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 13px;
+  display:block; padding:20px; border-radius:20px;
+  text-decoration:none; background:#fff9fd;
+  border:1px solid #f4d9e8; transition:.2s;
 }
-
-.portal button {
-  background: var(--paper);
-  color: var(--ink);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 18px 10px;
-  box-shadow: var(--shadow);
-  transition: .2s;
-}
-
-.portal button:hover { transform: translateY(-4px); }
-.portal span { display: block; font-size: 2rem; }
-.portal small { color: var(--muted); }
-
-.notice {
-  border: 1px dashed var(--pink);
-  border-radius: 18px;
-  padding: 14px 17px;
-  color: var(--muted);
-  background: var(--paper);
-}
-
-.timeline {
-  position: relative;
-  max-width: 760px;
-  margin: auto;
-}
-
-.timeline:before {
-  content: "";
-  position: absolute;
-  left: 17px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--line);
-}
-
-.moment {
-  position: relative;
-  margin: 0 0 18px 42px;
-}
-
-.moment:before {
-  content: "♡";
-  position: absolute;
-  left: -38px;
-  top: 14px;
-  color: var(--hot);
-  background: var(--paper);
-  font-size: 1.3rem;
-}
-
-.memory-photo {
-  height: 160px;
-  border-radius: 16px;
-  border: 1px dashed var(--pink);
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, #ffe4f0, #eee8ff);
-  color: #a45c86;
-  text-align: center;
-  padding: 12px;
-  overflow: hidden;
-}
-
-.memory-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.video-frame {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 16px;
-  background: #1c1423;
-  display: grid;
-  place-items: center;
-  color: white;
-  overflow: hidden;
-}
-
-.video-frame video {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
+.portal:hover { transform:translateY(-4px); background:white; }
+.portal .emoji { font-size:2rem; }
+.portal strong { display:block; margin:9px 0; }
 .letter {
-  font-family: Georgia, serif;
-  font-size: 1.08rem;
-  white-space: pre-line;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 8px 28px 8px 28px;
-  padding: clamp(20px, 5vw, 45px);
-  box-shadow: var(--shadow);
+  font-family:Georgia,serif; line-height:2;
+  white-space:pre-line; background:#fffaf4;
+  border:1px solid #f6dfd0; padding:23px;
+  border-radius:15px; transform:rotate(-.3deg);
 }
-
-.inputrow {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+.game-output { min-height:35px; color:#b34581; font-weight:bold; margin-top:12px; }
+.gift {
+  font-size:3.2rem; border:0; border-radius:20px;
+  padding:25px 8px; background:#fff5fb;
+  border:1px solid #f3d4e6; width:100%;
 }
-
-.inputrow input {
-  min-width: 0;
-  flex: 1;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 99px;
-  padding: 11px 15px;
-  color: var(--ink);
+.gift:hover { transform:scale(1.03); }
+.progress { height:8px; background:#f5d8e7; border-radius:20px; overflow:hidden; }
+.progress div { height:100%; width:0; background:linear-gradient(90deg,#ff6fae,#ac88f5); transition:.3s; }
+textarea,input {
+  width:100%; border:1px solid #efcbdc; background:#fffafd;
+  border-radius:14px; padding:13px; color:var(--ink);
+  outline-color:#f18bbd; margin:7px 0 12px;
 }
-
-.output {
-  margin-top: 15px;
-  padding: 15px;
-  border-radius: 16px;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  min-height: 45px;
+footer { padding:38px 18px 65px; text-align:center; color:#9b6c87; }
+#toast {
+  position:fixed; left:50%; bottom:25px; z-index:50;
+  transform:translate(-50%,25px); opacity:0; pointer-events:none;
+  padding:13px 20px; border-radius:30px;
+  color:#fff; background:#a54c7b; transition:.25s;
+  max-width:90%; text-align:center;
 }
-
-.starfield {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-}
-
-.star {
-  font-size: 2rem;
-  border-radius: 15px;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  padding: 14px 0;
-  color: var(--pink);
-}
-
-.star.found {
-  background: #fff0bd;
-  color: #d38b20;
-}
-
-.meter {
-  height: 10px;
-  border-radius: 99px;
-  background: var(--line);
-  overflow: hidden;
-}
-
-.meter div {
-  height: 100%;
-  width: 0;
-  background: linear-gradient(90deg, var(--pink), var(--lav));
-  transition: width .3s;
-}
-
-.cake {
-  font-size: 6rem;
-  text-align: center;
-  filter: drop-shadow(0 8px 8px #d94e9324);
-  animation: bob 2.5s infinite;
-}
-
-@keyframes bob {
-  50% { transform: translateY(-7px); }
-}
-
-.wishlist {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.wish {
-  border: 1px solid var(--line);
-  border-radius: 99px;
-  padding: 8px 13px;
-  background: var(--paper);
-}
-
-.footer {
-  text-align: center;
-  padding: 45px 0 70px;
-  color: var(--muted);
-}
-
-.toast {
-  position: fixed;
-  bottom: 18px;
-  left: 50%;
-  transform: translate(-50%, 130px);
-  transition: .35s;
-  background: var(--ink);
-  color: var(--paper);
-  padding: 12px 18px;
-  border-radius: 99px;
-  z-index: 30;
-  box-shadow: var(--shadow);
-  max-width: 90%;
-  text-align: center;
-}
-
-.toast.show { transform: translate(-50%, 0); }
-
-.spark {
-  position: fixed;
-  pointer-events: none;
-  z-index: 20;
-  animation: rise 1.4s ease-out forwards;
-}
-
-@keyframes rise {
-  to {
-    transform: translateY(-120px) rotate(160deg);
-    opacity: 0;
-  }
-}
-
-.hide { display: none !important; }
-.small { font-size: .85rem; color: var(--muted); }
-
-@media (max-width: 760px) {
-  .grid { grid-template-columns: 1fr 1fr; }
-  .portal { grid-template-columns: repeat(2, 1fr); }
-  .nav { align-items: flex-start; }
-  .navlinks { display: none; }
-  .hero { min-height: 75vh; }
-  .starfield { grid-template-columns: repeat(5, 1fr); gap: 6px; }
-  .star { font-size: 1.5rem; padding: 10px 0; }
-}
-
-@media (max-width: 450px) {
-  .grid { grid-template-columns: 1fr; }
-  .timebox { min-width: 65px; padding: 10px; }
-  .timebox b { font-size: 1.3rem; }
+#toast.show { opacity:1; transform:translate(-50%,0); }
+#confetti { position:fixed; inset:0; pointer-events:none; z-index:30; overflow:hidden; }
+.confetti-piece { position:absolute; top:-15px; animation:fall 3.5s linear forwards; }
+@keyframes fall { to { transform:translateY(110vh) rotate(800deg); opacity:.2; } }
+details summary { cursor:pointer; font-weight:bold; }
+details { margin-top:12px; }
+@media(max-width:620px) {
+  .two,.three { grid-template-columns:1fr; }
+  section { padding:50px 15px; }
+  .hero { min-height:84vh; }
+  .photo { height:320px; }
+  .card { padding:18px; }
+  .timebox { min-width:65px; }
 }
 </style>
 </head>
 
 <body>
+<div id="confetti"></div>
 
-<div class="topbar">
-  <div class="wrap nav">
-    <div class="brand">✦ KYUUTUVERSE</div>
-    <div class="navlinks">
-      <a href="#map">Explore</a>
-      <a href="#memories">Memories</a>
-      <a href="#vault">Video vault</a>
-      <a href="#games">Games</a>
-      <a href="#letter">Letter</a>
-    </div>
-    <button class="btn secondary" id="themeBtn">🌙 Night mode</button>
-  </div>
-</div>
+<nav>
+  <span class="brand">♡ Kyuutuverse</span>
+  <a href="#home">Home</a>
+  <a href="#memories">Memories</a>
+  <a href="#song">Our Song</a>
+  <a href="#videos">Videos</a>
+  <a href="#games">Games</a>
+  <a href="#letter">Letter</a>
+  <a href="#wishes">Wishes</a>
+  <a href="#surprise">Surprise</a>
+</nav>
 
-<header class="hero">
-  <div class="orb one"></div>
-  <div class="orb two"></div>
-  <div class="orb three"></div>
-
-  <div class="wrap">
-    <div class="eyebrow">A tiny universe, made for one girl</div>
-    <h1>Welcome to<br><span class="gradient">Kyuutu's Universe</span> ♡</h1>
-
+<header class="hero" id="home">
+  <div class="hero-inner">
+    <span class="pill">A tiny universe made for one special girl</span>
+    <div class="hero-heart">💗</div>
+    <p class="eyebrow">For my favourite person</p>
+    <h1>Kyuutuverse</h1>
+    <h2 style="font-size:clamp(1.25rem,5vw,2rem)">Happy Birthday, Anuska! 🎂</h2>
     <p>
-      Dear Anuska, this isn't just a birthday website.
-      It's a little universe of memories, silly games, secret notes,
-      dreams, and all the tiny things that make you wonderfully you.
+      Welcome to your own little corner of the internet, Kyuutu.
+      Filled with memories, music, silly games, warm wishes and
+      all the little things that remind me of you. 🎀✨
     </p>
 
-    <div class="countdown">
-      <div class="timebox"><b id="days">--</b><small>Days</small></div>
-      <div class="timebox"><b id="hours">--</b><small>Hours</small></div>
-      <div class="timebox"><b id="mins">--</b><small>Minutes</small></div>
-      <div class="timebox"><b id="secs">--</b><small>Seconds</small></div>
+    <div class="countdown" id="countdown">
+      <div class="timebox"><strong id="days">--</strong><span>DAYS</span></div>
+      <div class="timebox"><strong id="hours">--</strong><span>HOURS</span></div>
+      <div class="timebox"><strong id="minutes">--</strong><span>MINUTES</span></div>
+      <div class="timebox"><strong id="seconds">--</strong><span>SECONDS</span></div>
     </div>
+    <p id="countdownMessage" class="muted small">Counting down to your special day 💕</p>
 
-    <div class="small">Counting down to 5 October 2026 · midnight IST</div>
-
-    <div class="hero-actions">
-      <a class="btn" href="#map" style="text-decoration:none">🚀 Start exploring</a>
-      <button class="btn secondary" id="surpriseBtn">🎁 Give me a surprise</button>
-    </div>
+    <a href="#universe"><button class="btn">Enter your universe ✨</button></a>
+    <button class="btn secondary" onclick="showToast('A little reminder: you deserve happiness, Kyuutu 💗')">A little reminder 💌</button>
   </div>
 </header>
 
-<main>
-
-<section id="map">
+<section id="universe">
   <div class="wrap">
-    <div class="sectionhead">
-      <div class="eyebrow">Choose your destination</div>
-      <h2>The Universe Map 🪐</h2>
-      <p>Every planet opens a different corner of this little world. Pick any destination.</p>
+    <div class="section-head">
+      <p class="eyebrow">Choose your adventure</p>
+      <h2>Your little universe 🌷</h2>
+      <p>Every corner holds a different little surprise. Explore wherever your heart takes you.</p>
     </div>
-
-    <div class="portal">
-      <button data-go="memories"><span>📸</span><b>Memory Moon</b><small>Little moments</small></button>
-      <button data-go="vault"><span>🎞️</span><b>Movie Planet</b><small>Photos & videos</small></button>
-      <button data-go="games"><span>🕹️</span><b>Play Planet</b><small>Mini games</small></button>
-      <button data-go="letter"><span>💌</span><b>Letter Nebula</b><small>Words from me</small></button>
-      <button data-go="wishes"><span>🌠</span><b>Wish Galaxy</b><small>Future dreams</small></button>
-      <button data-go="garden"><span>🌷</span><b>Compliment Garden</b><small>Kind reminders</small></button>
-      <button data-go="timecapsule"><span>⏳</span><b>Time Capsule</b><small>Notes for later</small></button>
-      <button data-go="finale"><span>🎆</span><b>Final Orbit</b><small>Birthday finale</small></button>
+    <div class="grid three">
+      <a class="portal" href="#memories"><span class="emoji">📸</span><strong>Our Memory Lane</strong><span class="muted small">Little moments, forever saved.</span></a>
+      <a class="portal" href="#song"><span class="emoji">🎧</span><strong>Our Song</strong><span class="muted small">Press play and stay a while.</span></a>
+      <a class="portal" href="#videos"><span class="emoji">🎬</span><strong>Moving Memories</strong><span class="muted small">Three little video moments.</span></a>
+      <a class="portal" href="#games"><span class="emoji">🎮</span><strong>Kyuutu Games</strong><span class="muted small">Tiny challenges and cute rewards.</span></a>
+      <a class="portal" href="#letter"><span class="emoji">💌</span><strong>Open When Ready</strong><span class="muted small">A letter written just for you.</span></a>
+      <a class="portal" href="#wishes"><span class="emoji">🌠</span><strong>Wish Galaxy</strong><span class="muted small">Make a wish for your new year.</span></a>
     </div>
   </div>
 </section>
 
 <section id="memories">
   <div class="wrap">
-    <div class="sectionhead">
-      <div class="eyebrow">Memory Moon</div>
-      <h2>Little moments, big feelings 📸</h2>
-      <p>Add your favourite pictures and turn this page into a scrapbook.</p>
+    <div class="section-head">
+      <p class="eyebrow">Little pieces of forever</p>
+      <h2>Our Memory Lane 📸</h2>
+      <p>Three pictures, three little reminders that ordinary moments can feel special.</p>
     </div>
-
-    <div class="grid">
-      <article class="card">
-        <div class="memory-photo">
-          <img src="photo1.jpg" alt="A favourite memory"
-               onerror="this.style.display='none';this.parentElement.textContent='📷 Add photo1.jpg here';">
-        </div>
-        <h3>Memory No. 1</h3>
-        <p>A little moment worth keeping forever.</p>
-      </article>
-
-      <article class="card">
-        <div class="memory-photo">
-          <img src="photo2.jpg" alt="Another favourite memory"
-               onerror="this.style.display='none';this.parentElement.textContent='📷 Add photo2.jpg here';">
-        </div>
-        <h3>Memory No. 2</h3>
-        <p>One more page in our memory book.</p>
-      </article>
-
-      <article class="card">
-        <div class="memory-photo">
-          <img src="photo3.jpg" alt="A special picture"
-               onerror="this.style.display='none';this.parentElement.textContent='📷 Add photo3.jpg here';">
-        </div>
-        <h3>Memory No. 3</h3>
-        <p>Some pictures say more than words.</p>
-      </article>
+    <div class="grid three">
+      <div class="card photo-card">
+        <img class="photo" src="IMG-20260829-WA0026.jpg" alt="Memory one" loading="lazy">
+        <p><span class="memory-number">MEMORY 01</span><br>One for the memory book 💗</p>
+      </div>
+      <div class="card photo-card">
+        <img class="photo" src="IMG-20260917-WA0025.jpg" alt="Memory two" loading="lazy">
+        <p><span class="memory-number">MEMORY 02</span><br>A moment worth keeping 🌷</p>
+      </div>
+      <div class="card photo-card">
+        <img class="photo" src="Snapchat-1339605840.jpg" alt="Memory three" loading="lazy">
+        <p><span class="memory-number">MEMORY 03</span><br>Saved with a little love 🎀</p>
+      </div>
     </div>
+    <p class="center muted small">Tip: Tap a picture to open it in a new tab.</p>
+  </div>
+</section>
 
-    <div class="notice" style="margin-top:18px">
-      💗 Tip: Put your photos in the same folder as this HTML file.
-      Change the filenames in the code if your photos have different names.
+<section id="song">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Press play, think of us</p>
+      <h2>Our Little Soundtrack 🎧</h2>
+      <p>Some feelings are easier to share through music than through words.</p>
+    </div>
+    <div class="card center" style="max-width:590px;margin:auto">
+      <div class="song-cover">🎵</div>
+      <h3 style="margin-bottom:4px">Tera Naam Doon</h3>
+      <p class="muted small">A song for my Kyuutu 💗</p>
+      <div class="equalizer" id="equalizer">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <audio id="ourSong" controls preload="metadata">
+        <source src="tera naam doon.mp3" type="audio/mpeg">
+        Your browser does not support audio playback.
+      </audio>
+      <p class="small muted">Use the player above to play or pause the song.</p>
+      <button class="btn secondary" onclick="showToast('Imagine a little pink sky and your favourite song 💕')">Song dedication 💌</button>
     </div>
   </div>
 </section>
 
-<section id="vault">
+<section id="videos">
   <div class="wrap">
-    <div class="sectionhead">
-      <div class="eyebrow">Movie Planet</div>
-      <h2>Our Little Cinema 🎞️</h2>
-      <p>A space for video messages, favourite clips and birthday memories.</p>
+    <div class="section-head">
+      <p class="eyebrow">Little moments in motion</p>
+      <h2>Our Mini Cinema 🎬</h2>
+      <p>Press play whenever you want to revisit these moments.</p>
     </div>
-
     <div class="grid">
-      <article class="card">
-        <div class="video-frame">
-          <video controls playsinline preload="metadata">
-            <source src="memory1.mp4" type="video/mp4">
-            Your browser does not support video.
-          </video>
-        </div>
-        <h3>Memory Film</h3>
-        <p>Replace <b>memory1.mp4</b> with your video filename.</p>
-      </article>
-
-      <article class="card">
-        <div class="video-frame">
-          <video controls playsinline preload="metadata">
-            <source src="birthday-message.mp4" type="video/mp4">
-            Your browser does not support video.
-          </video>
-        </div>
-        <h3>A Message for You</h3>
-        <p>Add a personal birthday wish video here.</p>
-      </article>
-
-      <article class="card">
-        <div class="video-frame">
-          <video controls playsinline preload="metadata">
-            <source src="surprise.mp4" type="video/mp4">
-            Your browser does not support video.
-          </video>
-        </div>
-        <h3>The Surprise Film</h3>
-        <p>A final clip for a special moment.</p>
-      </article>
+      <div class="card">
+        <span class="pill">VIDEO 01</span>
+        <h3>Memory in Motion 🌸</h3>
+        <video class="media" controls preload="metadata" playsinline>
+          <source src="VIDEO1.mp4" type="video/mp4">
+          Your browser does not support video.
+        </video>
+      </div>
+      <div class="card">
+        <span class="pill">VIDEO 02</span>
+        <h3>A Little More of Us 🎀</h3>
+        <video class="media" controls preload="metadata" playsinline>
+          <source src="VIDEO2.mp4" type="video/mp4">
+          Your browser does not support video.
+        </video>
+      </div>
+      <div class="card">
+        <span class="pill">VIDEO 03</span>
+        <h3>One to Remember 💗</h3>
+        <video class="media" controls preload="metadata" playsinline>
+          <source src="VIDEO3.mp4" type="video/mp4">
+          Your browser does not support video.
+        </video>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="games">
   <div class="wrap">
-    <div class="sectionhead">
-      <div class="eyebrow">Play Planet</div>
-      <h2>Find the five hidden stars ⭐</h2>
-      <p>Tap each star to reveal a little message.</p>
+    <div class="section-head">
+      <p class="eyebrow">Play a little</p>
+      <h2>Kyuutu's Fun Corner 🎮</h2>
+      <p>Little games made to bring a smile to your face.</p>
     </div>
 
-    <div class="card">
-      <div class="starfield" id="starfield"></div>
-      <div class="meter" style="margin-top:18px">
-        <div id="starMeter"></div>
+    <div class="grid two">
+      <div class="card center">
+        <h3>1. Catch the Hearts 💗</h3>
+        <p>Tap the button to collect 5 hearts.</p>
+        <div class="progress"><div id="heartProgress"></div></div>
+        <p id="heartCount">Hearts collected: 0 / 5</p>
+        <button class="btn" id="heartButton" onclick="collectHeart()">Collect a heart 💗</button>
+        <div class="game-output" id="heartOutput"></div>
       </div>
-      <p id="starCount" style="text-align:center">0 of 5 stars found</p>
-      <div class="output" id="starOutput">Your star messages will appear here. ✨</div>
-    </div>
 
-    <div class="grid" style="margin-top:18px">
-      <article class="card">
-        <div class="emoji">🔐</div>
-        <h3>The Secret Code</h3>
-        <p>Enter the nickname written in this universe.</p>
-        <form id="codeForm" class="inputrow">
-          <input id="secretInput" placeholder="Enter secret word..." maxlength="40">
-          <button class="btn" type="submit">Unlock</button>
-        </form>
-        <div id="codeOutput" class="output">A secret message is waiting.</div>
-      </article>
+      <div class="card center">
+        <h3>2. Guess the Nickname 🎀</h3>
+        <p>What cute nickname is used on this website?</p>
+        <input id="nicknameInput" placeholder="Type your answer..." autocomplete="off">
+        <button class="btn" onclick="checkNickname()">Check answer</button>
+        <div class="game-output" id="nicknameOutput"></div>
+      </div>
 
-      <article class="card">
-        <div class="emoji">🎁</div>
-        <h3>Mystery Gift Boxes</h3>
-        <p>Choose a box to reveal a surprise.</p>
-        <div class="hero-actions">
-          <button class="btn secondary mystery" data-box="0">🎁 Box 1</button>
-          <button class="btn secondary mystery" data-box="1">🎀 Box 2</button>
-          <button class="btn secondary mystery" data-box="2">💝 Box 3</button>
+      <div class="card center">
+        <h3>3. Pick a Mystery Gift 🎁</h3>
+        <p>Choose one box to reveal a little message.</p>
+        <div class="grid three">
+          <button class="gift" onclick="openGift(0)" aria-label="Gift one">🎁</button>
+          <button class="gift" onclick="openGift(1)" aria-label="Gift two">🎀</button>
+          <button class="gift" onclick="openGift(2)" aria-label="Gift three">💝</button>
         </div>
-        <div id="boxOutput" class="output">Pick any gift box!</div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="garden">
-  <div class="wrap">
-    <div class="sectionhead">
-      <div class="eyebrow">Compliment Garden</div>
-      <h2>Flowers with kind reminders 🌷</h2>
-      <p>Tap a flower whenever you need a small reminder that you matter.</p>
-    </div>
-
-    <div class="grid">
-      <button class="card flower" data-message="🌸 You deserve kindness, including from yourself.">
-        <div class="emoji">🌸</div>
-        <h3>Flower of kindness</h3>
-        <p>Tap to bloom</p>
-      </button>
-
-      <button class="card flower" data-message="🌻 Your dreams deserve time, patience and room to grow.">
-        <div class="emoji">🌻</div>
-        <h3>Flower of dreams</h3>
-        <p>Tap to bloom</p>
-      </button>
-
-      <button class="card flower" data-message="🌷 You deserve to be appreciated exactly as you are.">
-        <div class="emoji">🌷</div>
-        <h3>Flower of courage</h3>
-        <p>Tap to bloom</p>
-      </button>
-    </div>
-
-    <div id="flowerOutput" class="output" style="text-align:center">
-      🌱 Your kind reminder will appear here.
-    </div>
-  </div>
-</section>
-
-<section id="wishes">
-  <div class="wrap">
-    <div class="sectionhead">
-      <div class="eyebrow">Wish Galaxy</div>
-      <h2>A galaxy of future dreams 🌠</h2>
-      <p>A little list of things to hope for, try, laugh about, and remember.</p>
-    </div>
-
-    <div class="card">
-      <div class="wishlist" id="wishlist">
-        <span class="wish">🌊 A peaceful day by the sea</span>
-        <span class="wish">🍰 Try a new dessert</span>
-        <span class="wish">📸 Take silly photos</span>
-        <span class="wish">🌧️ Enjoy a rainy evening</span>
-        <span class="wish">🎶 Make a shared playlist</span>
-        <span class="wish">🌇 Watch a sunset</span>
+        <div class="game-output" id="giftOutput"></div>
       </div>
 
-      <form id="wishForm" class="inputrow" style="margin-top:18px">
-        <input id="wishInput" placeholder="Add a little dream…" maxlength="90">
-        <button class="btn" type="submit">Add wish +</button>
-      </form>
-
-      <p class="small">These wishes stay in this browser session; they aren't sent to anyone.</p>
-    </div>
-  </div>
-</section>
-
-<section id="timecapsule">
-  <div class="wrap">
-    <div class="sectionhead">
-      <div class="eyebrow">Time Capsule</div>
-      <h2>A note for the future ⏳</h2>
-      <p>Write a message for a future version of yourselves.</p>
-    </div>
-
-    <div class="card">
-      <label for="capsuleText"><b>Dear future us…</b></label>
-
-      <textarea id="capsuleText" rows="5" maxlength="700"
-        style="width:100%;margin-top:10px;border:1px solid var(--line);border-radius:18px;padding:15px;background:var(--paper);color:var(--ink);font:inherit"
-        placeholder="I hope when we read this, we remember…"></textarea>
-
-      <div class="inputrow" style="margin-top:10px">
-        <button class="btn" id="saveCapsule">Save time capsule</button>
-        <button class="btn secondary" id="readCapsule">Read saved note</button>
+      <div class="card center">
+        <h3>4. Daily Compliment 🌷</h3>
+        <p>Tap for a small reminder of how special you are.</p>
+        <div style="font-size:2.6rem">🌸</div>
+        <button class="btn" onclick="compliment()">Give me a compliment</button>
+        <div class="game-output" id="complimentOutput"></div>
       </div>
-
-      <div id="capsuleOutput" class="output">Your future note will appear here.</div>
-      <p class="small">The note is saved in this browser on this device, not sent to anyone.</p>
     </div>
   </div>
 </section>
 
 <section id="letter">
   <div class="wrap">
-    <div class="sectionhead">
-      <div class="eyebrow">Letter Nebula</div>
-      <h2>A letter for my Kyuutu 💌</h2>
-      <p>A birthday letter you can personalise before sharing the website.</p>
+    <div class="section-head">
+      <p class="eyebrow">A few words from my heart</p>
+      <h2>Dear Anuska 💌</h2>
+      <p>A little letter for you to read whenever you need a smile.</p>
     </div>
+    <div class="card" style="max-width:700px;margin:auto">
+      <div class="letter">Dear Kyuutu,
 
-    <article class="letter" id="letterText">Dear Anuska, my Kyuutu ♡
+Happy Birthday, Anuska! 🎂💗
 
-Happy birthday! I hope this new year of your life brings you peaceful days, genuine laughter, kind people, exciting little adventures, and the courage to follow the dreams that matter to you.
+Today is a reminder of how wonderful it is to have someone who can make an ordinary day feel a little more special.
 
-I made this tiny universe because a normal birthday wish felt too small for everything I wanted to celebrate about you. Every planet is a little reminder to smile, explore, play, remember, and imagine what comes next.
+I hope this new chapter brings you peaceful mornings, beautiful opportunities, genuine laughter and people who treat your heart with kindness.
 
-Please remember that you deserve care and respect on ordinary days too—not just on birthdays. Keep being curious, keep growing at your own pace, and never feel that you have to be perfect to be wonderful.
+Never forget that you deserve to feel appreciated, supported and happy. Keep being yourself, keep dreaming big, and keep finding little reasons to smile.
 
-I hope you enjoy exploring this little world as much as I enjoyed making it. Here's to more laughter, more memories, and many new chapters ahead.
+May your favourite songs sound sweeter, your dreams feel closer, and your days be filled with lovely surprises.
 
-Happy birthday, Kyuutu. 🌷
+This little website is just a collection of moments, music and words, made especially for you. I hope it makes you smile whenever you visit it.
 
-With lots of warm wishes,
-Biraja ♡</article>
+Happy Birthday once again, my Kyuutu. 🎀
 
-    <div class="hero-actions">
-      <button class="btn" id="typeBtn">✨ Reveal letter slowly</button>
-      <button class="btn secondary" id="copyLetter">Copy letter text</button>
-    </div>
-  </div>
-</section>
-
-<section id="birthday">
-  <div class="wrap">
-    <div class="sectionhead">
-      <div class="eyebrow">Birthday Garden</div>
-      <h2>Make a little birthday wish 🎂</h2>
-      <p>Tap the cake to make the garden sparkle.</p>
-    </div>
-
-    <div class="card" style="text-align:center">
-      <div class="cake" id="cake">🎂</div>
-      <h3 id="cakeTitle">One wish, just for you</h3>
-      <p id="cakeText" class="small">Tap the cake to celebrate.</p>
-      <button class="btn" id="cakeBtn">✨ Celebrate</button>
+With lots of good wishes,
+Biraja 💗</div>
+      <div class="center" style="margin-top:20px">
+        <button class="btn" onclick="celebrate()">Send a little love 💖</button>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="finale">
+<section id="wishes">
   <div class="wrap">
-    <div class="sectionhead">
-      <div class="eyebrow">Final Orbit</div>
-      <h2>One last little surprise 🎆</h2>
-      <p>Before you leave this universe, collect a final message.</p>
+    <div class="section-head">
+      <p class="eyebrow">A sky full of possibilities</p>
+      <h2>Wish Upon a Star 🌠</h2>
+      <p>Think of something you hope for in your new year, then release your wish into the galaxy.</p>
     </div>
-
-    <div class="card" style="text-align:center">
-      <div class="emoji">💝</div>
-      <h3>Dear Kyuutu, this universe was made just for you.</h3>
-      <p id="finalMessage">May your next chapter be full of soft mornings, brave dreams, belly laughs, and people who celebrate the real you.</p>
-      <button class="btn" id="finalBtn">Open the final surprise ♡</button>
-      <div id="finalOutput" class="output hide"></div>
+    <div class="card center" style="max-width:590px;margin:auto">
+      <div style="font-size:3rem">🌌✨🌙</div>
+      <textarea id="wishInput" rows="3" placeholder="Write your birthday wish here..."></textarea>
+      <button class="btn" onclick="releaseWish()">Release my wish ✨</button>
+      <div class="game-output" id="wishOutput"></div>
+      <p class="small muted">Your wish stays in this page while it is open. It isn't sent anywhere.</p>
     </div>
   </div>
 </section>
 
-</main>
-
-<footer class="footer">
+<section id="timecapsule">
   <div class="wrap">
-    <div style="font-size:2rem">♡ ✦ ♡</div>
-    <b>Made with care by Biraja Prasad Jena</b>
-    <p>A tiny universe for Anuska · 5 October 2026</p>
-    <p class="small">A birthday universe made with love and imagination.</p>
+    <div class="section-head">
+      <p class="eyebrow">A note for another day</p>
+      <h2>Future You's Time Capsule ⏳</h2>
+      <p>Write a little message to your future self.</p>
+    </div>
+    <div class="card" style="max-width:590px;margin:auto">
+      <label for="futureNote"><strong>Dear future Anuska...</strong></label>
+      <textarea id="futureNote" rows="4" placeholder="What do you want to remember? What are you dreaming about?"></textarea>
+      <button class="btn" onclick="saveNote()">Save my time capsule 💌</button>
+      <button class="btn secondary" onclick="loadNote()">Read saved note</button>
+      <p id="noteOutput" class="game-output"></p>
+      <p class="small muted">This uses browser storage on this device. It may not appear on another phone or browser.</p>
+    </div>
   </div>
+</section>
+
+<section id="surprise">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">One last little thing</p>
+      <h2>The Birthday Surprise 🎂</h2>
+      <p>Take a breath, make a wish, and open your final surprise.</p>
+    </div>
+    <div class="card center" style="max-width:620px;margin:auto">
+      <div id="cake" style="font-size:6rem">🎂</div>
+      <h3 id="surpriseTitle">Ready for your surprise, Kyuutu?</h3>
+      <p id="surpriseText">This little universe was made to celebrate you and the happiness you deserve.</p>
+      <button class="btn" onclick="finalSurprise()">Open the surprise ✨</button>
+      <div id="finalMessage" class="game-output"></div>
+    </div>
+  </div>
+</section>
+
+<section id="last">
+  <div class="wrap center">
+    <div style="font-size:3rem">🌷💗🎀</div>
+    <h2>End of the page, not the good wishes.</h2>
+    <p class="muted">Whenever you return, may this little corner bring back a happy thought.</p>
+    <button class="btn secondary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to the beginning ↑</button>
+  </div>
+</section>
+
+<footer>
+  <p>Made with 💗 by Biraja, especially for Anuska.</p>
+  <p class="small">Kyuutuverse © 2026 · A tiny universe of memories ✨</p>
 </footer>
 
-<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="toast" role="status" aria-live="polite"></div>
 
 <script>
-const $ = selector => document.querySelector(selector);
-const $$ = selector => [...document.querySelectorAll(selector)];
+/* BIRTHDAY COUNTDOWN
+   Date: 5 October 2026 at midnight, India Standard Time.
+*/
+const birthday = new Date("2026-10-05T00:00:00+05:30").getTime();
 
-function toast(message) {
-  const element = $("#toast");
-  element.textContent = message;
-  element.classList.add("show");
-
-  setTimeout(() => element.classList.remove("show"), 2600);
-}
-
-function sparkles(amount = 14) {
-  const symbols = ["💗", "✨", "🌸", "⭐", "🎀", "♡"];
-
-  for (let i = 0; i < amount; i++) {
-    const element = document.createElement("span");
-
-    element.className = "spark";
-    element.textContent =
-      symbols[Math.floor(Math.random() * symbols.length)];
-
-    element.style.left = Math.random() * 100 + "vw";
-    element.style.bottom = Math.random() * 12 + "px";
-    element.style.fontSize = 14 + Math.random() * 22 + "px";
-
-    document.body.appendChild(element);
-
-    setTimeout(() => element.remove(), 1500);
-  }
-}
-
-/* Birthday countdown: midnight IST on 5 October 2026 */
 function updateCountdown() {
-  const birthday = new Date("2026-10-05T00:00:00+05:30").getTime();
-  const difference = birthday - Date.now();
+  const now = Date.now();
+  let distance = birthday - now;
+  const message = document.getElementById("countdownMessage");
 
-  if (difference <= 0) {
-    $("#days").textContent = "00";
-    $("#hours").textContent = "00";
-    $("#mins").textContent = "00";
-    $("#secs").textContent = "00";
+  if (distance <= 0) {
+    ["days","hours","minutes","seconds"].forEach(id => {
+      document.getElementById(id).textContent = "00";
+    });
+    message.textContent = "It's your birthday, Anuska! Happy Birthday, Kyuutu! 🎂💗";
     return;
   }
 
-  $("#days").textContent =
-    String(Math.floor(difference / 86400000)).padStart(2, "0");
+  const d = Math.floor(distance / 86400000);
+  const h = Math.floor((distance % 86400000) / 3600000);
+  const m = Math.floor((distance % 3600000) / 60000);
+  const s = Math.floor((distance % 60000) / 1000);
 
-  $("#hours").textContent =
-    String(Math.floor((difference % 86400000) / 3600000)).padStart(2, "0");
-
-  $("#mins").textContent =
-    String(Math.floor((difference % 3600000) / 60000)).padStart(2, "0");
-
-  $("#secs").textContent =
-    String(Math.floor((difference % 60000) / 1000)).padStart(2, "0");
+  document.getElementById("days").textContent = d;
+  document.getElementById("hours").textContent = String(h).padStart(2,"0");
+  document.getElementById("minutes").textContent = String(m).padStart(2,"0");
+  document.getElementById("seconds").textContent = String(s).padStart(2,"0");
 }
-
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-/* Day and night theme */
-$("#themeBtn").onclick = () => {
-  document.body.classList.toggle("night");
-
-  $("#themeBtn").textContent =
-    document.body.classList.contains("night")
-      ? "☀️ Day mode"
-      : "🌙 Night mode";
-};
-
-/* Navigate between planets */
-$$("[data-go]").forEach(button => {
-  button.onclick = () => {
-    document.getElementById(button.dataset.go)
-      .scrollIntoView({ behavior: "smooth" });
-  };
-});
-
-/* Surprise button */
-$("#surpriseBtn").onclick = () => {
-  sparkles(25);
-  toast("Surprise! You are the main character of this little universe 💗");
-};
-
-/* Hidden-star treasure hunt */
-const starMessages = [
-  "You make ordinary moments worth remembering. ♡",
-  "Your dreams deserve space to grow. 🌷",
-  "A little reminder: you are appreciated. ✨",
-  "May something lovely surprise you today. 🎀",
-  "Keep a little room for wonder. 🌠"
-];
-
-const starField = $("#starfield");
-
-for (let i = 0; i < 5; i++) {
-  const button = document.createElement("button");
-
-  button.className = "star";
-  button.textContent = "☆";
-  button.setAttribute("aria-label", "Find star " + (i + 1));
-
-  button.onclick = () => {
-    if (button.classList.contains("found")) return;
-
-    button.classList.add("found");
-    button.textContent = "★";
-
-    $("#starOutput").textContent = starMessages[i];
-
-    const found = $$(".star.found").length;
-
-    $("#starCount").textContent = found + " of 5 stars found";
-    $("#starMeter").style.width = found * 20 + "%";
-
-    if (found === 5) {
-      sparkles(20);
-      toast("All five stars found! You completed the little galaxy ✨");
-    }
-  };
-
-  starField.appendChild(button);
+/* FLOATING DECORATIONS */
+const floatEmojis = ["♡","💗","✦","🌷","✨","🎀"];
+for (let i = 0; i < 18; i++) {
+  const el = document.createElement("span");
+  el.className = "float";
+  el.textContent = floatEmojis[i % floatEmojis.length];
+  el.style.left = Math.random() * 100 + "%";
+  el.style.bottom = "-50px";
+  el.style.fontSize = (15 + Math.random() * 20) + "px";
+  el.style.animationDelay = (Math.random() * 9) + "s";
+  el.style.animationDuration = (7 + Math.random() * 7) + "s";
+  document.body.appendChild(el);
 }
 
-/* Secret nickname game */
-$("#codeForm").onsubmit = event => {
-  event.preventDefault();
+/* SONG PLAYER VISUALIZER */
+const song = document.getElementById("ourSong");
+const equalizer = document.getElementById("equalizer");
+song.addEventListener("play", () => equalizer.classList.add("playing"));
+song.addEventListener("pause", () => equalizer.classList.remove("playing"));
+song.addEventListener("ended", () => equalizer.classList.remove("playing"));
 
-  const value = $("#secretInput").value.trim().toLowerCase();
+/* TOAST MESSAGE */
+let toastTimer;
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 3000);
+}
 
-  if (value === "kyuutu") {
-    $("#codeOutput").textContent =
-      "Unlocked! 💗 You deserve to feel celebrated, supported, and appreciated in every season of life.";
+/* HEART COLLECTION GAME */
+let hearts = 0;
+function collectHeart() {
+  if (hearts >= 5) return;
+  hearts++;
+  document.getElementById("heartCount").textContent =
+    "Hearts collected: " + hearts + " / 5";
+  document.getElementById("heartProgress").style.width = (hearts * 20) + "%";
 
-    sparkles(12);
+  if (hearts === 5) {
+    document.getElementById("heartOutput").textContent =
+      "You collected all five! Sending you a pocketful of happiness 💗";
+    document.getElementById("heartButton").textContent = "All hearts collected 💖";
+    showToast("Mission complete, Kyuutu! 💗");
   } else {
-    $("#codeOutput").textContent =
-      "Not quite! Try the nickname from the website title. 🌸";
+    document.getElementById("heartOutput").textContent =
+      ["A little heart for you!","Another one, just because!","You're doing great!","Almost there!"][hearts - 1];
   }
-};
+}
 
-/* Mystery gift boxes */
-const boxMessages = [
-  "A virtual hug for the day you need one. 🫂",
-  "A tiny reminder that your dreams matter. 🌙",
-  "A wish for more laughter and lovely surprises. 🎁"
+/* NICKNAME GAME */
+function checkNickname() {
+  const value = document.getElementById("nicknameInput").value.trim().toLowerCase();
+  const output = document.getElementById("nicknameOutput");
+  if (value === "kyuutu" || value === "kyu u tu" || value === "kyuutu 💗") {
+    output.textContent = "Correct! Kyuutu is the star of this universe! 🎀";
+    celebrate();
+  } else {
+    output.textContent = "Hint: It starts with K and is extra cute. Try again! 💗";
+  }
+}
+
+/* MYSTERY GIFTS */
+const gifts = [
+  "🎀 Your gift: a reminder that you deserve kindness and happiness.",
+  "🌷 Your gift: may this year bring new memories and beautiful surprises.",
+  "💖 Your gift: a little pocket of courage for every dream you chase."
 ];
+const openedGifts = new Set();
+function openGift(index) {
+  if (openedGifts.has(index)) {
+    document.getElementById("giftOutput").textContent = gifts[index];
+    return;
+  }
+  openedGifts.add(index);
+  document.getElementById("giftOutput").textContent = gifts[index];
+  showToast("A little gift opened just for you 🎁");
+}
 
-$$(".mystery").forEach(button => {
-  button.onclick = () => {
-    $("#boxOutput").textContent = boxMessages[Number(button.dataset.box)];
-    sparkles(8);
-  };
-});
+/* COMPLIMENT GARDEN */
+const compliments = [
+  "Your smile can brighten an ordinary day. 🌷",
+  "You deserve people who listen and care. 💗",
+  "Your dreams are worth making time for. ✨",
+  "You don't need to be perfect to be wonderful. 🎀",
+  "May you always find reasons to laugh. 🌸",
+  "You are allowed to grow at your own pace. 🌱",
+  "The world has room for your own kind of magic. 🌙"
+];
+let lastCompliment = -1;
+function compliment() {
+  let n;
+  do { n = Math.floor(Math.random() * compliments.length); }
+  while (n === lastCompliment && compliments.length > 1);
+  lastCompliment = n;
+  document.getElementById("complimentOutput").textContent = compliments[n];
+}
 
-/* Compliment garden */
-$$(".flower").forEach(button => {
-  button.onclick = () => {
-    $("#flowerOutput").textContent = button.dataset.message;
-    sparkles(5);
-  };
-});
-
-/* Add future dreams */
-$("#wishForm").onsubmit = event => {
-  event.preventDefault();
-
-  const input = $("#wishInput");
-  const value = input.value.trim();
-
-  if (!value) return;
-
-  const item = document.createElement("span");
-  item.className = "wish";
-  item.textContent = "✨ " + value;
-
-  $("#wishlist").appendChild(item);
+/* WISH GALAXY */
+function releaseWish() {
+  const input = document.getElementById("wishInput");
+  const output = document.getElementById("wishOutput");
+  if (!input.value.trim()) {
+    output.textContent = "Write a little wish first, then send it into the stars. 🌠";
+    return;
+  }
+  output.textContent = "✨ Wish released into your imaginary galaxy. May you keep working towards it! 🌠";
   input.value = "";
+  celebrate();
+}
 
-  toast("A new dream has joined the galaxy 🌠");
-};
-
-/* Save a time capsule in this browser */
-$("#saveCapsule").onclick = () => {
-  try {
-    localStorage.setItem(
-      "kyuutu-universe-capsule",
-      $("#capsuleText").value
-    );
-
-    $("#capsuleOutput").textContent =
-      "Saved on this browser. Come back to read it whenever you like. ♡";
-
-    toast("Time capsule saved on this device ⏳");
-  } catch (error) {
-    $("#capsuleOutput").textContent =
-      "This browser could not save the note. You can copy it somewhere safe.";
+/* TIME CAPSULE */
+function saveNote() {
+  const note = document.getElementById("futureNote").value.trim();
+  const output = document.getElementById("noteOutput");
+  if (!note) {
+    output.textContent = "Write a little note before saving it. 💌";
+    return;
   }
-};
-
-$("#readCapsule").onclick = () => {
   try {
-    const saved = localStorage.getItem("kyuutu-universe-capsule");
-
-    $("#capsuleOutput").textContent =
-      saved || "No saved note yet. Write one above and tap Save.";
-  } catch (error) {
-    $("#capsuleOutput").textContent =
-      "Could not read saved note in this browser.";
+    localStorage.setItem("kyuutuFutureNote", note);
+    output.textContent = "Your note has been saved in this browser on this device. 💗";
+  } catch (e) {
+    output.textContent = "Browser storage isn't available. Keep a copy of your note somewhere safe.";
   }
-};
-
-/* Typewriter birthday letter */
-const originalLetter = $("#letterText").textContent;
-
-$("#typeBtn").onclick = () => {
-  const element = $("#letterText");
-  element.textContent = "";
-
-  let index = 0;
-
-  const timer = setInterval(() => {
-    element.textContent += originalLetter[index] || "";
-    index++;
-
-    if (index >= originalLetter.length) {
-      clearInterval(timer);
+}
+function loadNote() {
+  const output = document.getElementById("noteOutput");
+  try {
+    const note = localStorage.getItem("kyuutuFutureNote");
+    if (note) {
+      document.getElementById("futureNote").value = note;
+      output.textContent = "Your saved note is back. Read it whenever you like. 💌";
+    } else {
+      output.textContent = "No saved note found in this browser yet.";
     }
-  }, 12);
-};
-
-/* Copy letter */
-$("#copyLetter").onclick = async () => {
-  try {
-    await navigator.clipboard.writeText(originalLetter);
-    toast("Letter copied 💌");
-  } catch (error) {
-    toast("Select and copy the letter text manually 💗");
+  } catch (e) {
+    output.textContent = "Browser storage isn't available right now.";
   }
-};
+}
 
-/* Birthday cake */
-let cakeCount = 0;
+/* BIRTHDAY SURPRISE + CONFETTI */
+function celebrate() {
+  const box = document.getElementById("confetti");
+  const colors = ["💗","🌸","🎀","✨","💕","🌷"];
+  for (let i = 0; i < 38; i++) {
+    const piece = document.createElement("span");
+    piece.className = "confetti-piece";
+    piece.textContent = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.left = Math.random() * 100 + "%";
+    piece.style.fontSize = (12 + Math.random() * 18) + "px";
+    piece.style.animationDelay = (Math.random() * 1.4) + "s";
+    box.appendChild(piece);
+    setTimeout(() => piece.remove(), 5000);
+  }
+}
+let finalOpened = false;
+function finalSurprise() {
+  const message = document.getElementById("finalMessage");
+  if (!finalOpened) {
+    finalOpened = true;
+    document.getElementById("cake").textContent = "🎂🎉💗";
+    document.getElementById("surpriseTitle").textContent = "Happy Birthday, Anuska! 🌷";
+    document.getElementById("surpriseText").textContent =
+      "Today is your day. May this new chapter bring you laughter, growth, kindness, peaceful moments and wonderful memories.";
+    message.textContent =
+      "Surprise unlocked! You deserve all the happiness in the world, Kyuutu. 💖 — Biraja";
+    celebrate();
+  } else {
+    message.textContent =
+      "One more birthday hug in emoji form: 🫂💗🎀 Happy Birthday again!";
+    celebrate();
+  }
+}
 
-$("#cakeBtn").onclick = () => {
-  cakeCount++;
+/* OPEN PHOTOS IN A NEW TAB WHEN TAPPED */
+document.querySelectorAll(".photo").forEach(img => {
+  img.style.cursor = "zoom-in";
+  img.addEventListener("click", () => {
+    if (img.complete && img.naturalWidth > 0) {
+      const win = window.open();
+      if (win) {
+        win.document.write(
+          '<title>Memory 💗</title><meta name="viewport" content="width=device-width,initial-scale=1">' +
+          '<body style="margin:0;background:#170e19;display:grid;place-items:center;min-height:100vh">' +
+          '<img src="' + img.src + '" style="max-width:100%;max-height:100vh;object-fit:contain"></body>'
+        );
+        win.document.close();
+      }
+    } else {
+      showToast("Check that this photo is uploaded with the exact filename.");
+    }
+  });
+});
 
-  const titles = [
-    "Make a wish, Kyuutu!",
-    "Let the good things find you.",
-    "Here's to a bright new chapter!"
-  ];
-
-  $("#cakeTitle").textContent =
-    titles[Math.min(cakeCount - 1, titles.length - 1)];
-
-  $("#cakeText").textContent =
-    "Birthday sparkle number " + cakeCount + " ✨";
-
-  sparkles(18);
-};
-
-$("#cake").onclick = () => $("#cakeBtn").click();
-
-/* Final surprise */
-$("#finalBtn").onclick = () => {
-  $("#finalOutput").classList.remove("hide");
-
-  $("#finalOutput").textContent =
-    "Anuska, may you always find reasons to laugh, people who listen, " +
-    "places where you feel safe being yourself, and dreams that make you " +
-    "excited to wake up. Happy birthday, Kyuutu. With love and warm wishes, Biraja. ♡";
-
-  $("#finalBtn").textContent = "Surprise opened 💗";
-
-  sparkles(35);
-};
+/* FRIENDLY MEDIA ERROR HINTS */
+document.querySelectorAll("img").forEach(img => {
+  img.addEventListener("error", () => {
+    img.style.display = "none";
+    const hint = document.createElement("p");
+    hint.className = "muted small center";
+    hint.textContent = "Photo not found — check the filename and letter case in your repository.";
+    img.parentElement.appendChild(hint);
+  });
+});
+document.querySelectorAll("video").forEach(video => {
+  video.addEventListener("error", () => {
+    showToast("A video could not load. Check its filename and upload status.");
+  });
+});
 </script>
-
 </body>
 </html>
