@@ -268,8 +268,8 @@ footer{padding:38px 18px 65px;text-align:center;color:#9b6c87}
     </div>
     <div class="grid">
       <div class="card"><span class="pill">VIDEO 01</span><h3>Memory in Motion 🌸</h3><video class="media" controls preload="metadata" playsinline><source src="VIDEO1.mp4" type="video/mp4">Video not supported.</video></div>
-      <div class="card"><span class="pill">VIDEO 02</span><h3>A Little More of Us 🎀</h3><video class="media" controls preload="metadata" playsinline><source src="VIDEO2.mp4" type="video/mp4">Video not supported.</video></div>
-      <div class="card"><span class="pill">VIDEO 03</span><h3>One to Remember 💗</h3><video class="media" controls preload="metadata" playsinline><source src="VIDEO3.mp4" type="video/mp4">Video not supported.</video></div>
+      <div class="card"><span class="pill">VIDEO 02</span><h3>Cutiepie 🎀</h3><video class="media" controls preload="metadata" playsinline><source src="VIDEO2.mp4" type="video/mp4">Video not supported.</video></div>
+      <div class="card"><span class="pill">VIDEO 03</span><h3>Hihihi 💗</h3><video class="media" controls preload="metadata" playsinline><source src="VIDEO3.mp4" type="video/mp4">Video not supported.</video></div>
     </div>
   </div>
 </section>
